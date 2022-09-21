@@ -63,5 +63,47 @@ namespace TPMoyennes
           }
     */
         }
+        class Note : Eleve
+        {
+            public int matiere { get; private set; }
+            public float note { get; private set; }
+            public Note(int m, float n) : base("", "")
+            {
+                this.matiere = m;
+                this.note = n;
+            }
+        }
+        class Classe
+        {
+            internal string nomClasse { get; }
+            internal string[] matieres;
+            internal Eleve[] eleves;
+            private string nom;
+            public Classe(string nom = "")
+            {
+                this.nom = nom;
+                this.nomClasse = nom;
+                this.eleves = new Eleve[30];
+                this.matieres = new string[10];
+            }
+
+        }
+
+        class Eleve : Classe
+        {
+            internal Note[] notes;
+            public string prenom;
+            public string nom;
+            public Eleve(string nom = "", string prenom = "")
+            {
+                this.nom = nom;
+                this.prenom = prenom;
+                this.notes = new Note[200];
+            }
+
+
+        }
     }
 }
+
+    
