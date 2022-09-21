@@ -48,14 +48,14 @@ namespace TPMoyennes
             Eleve eleve = sixiemeA.eleves[6];
             // Afficher la moyenne d'un élève dans une matière
             Console.Write(eleve.prenom + " " + eleve.nom + ", Moyenne en " + sixiemeA.matieres[1] + " : " +
-            eleve.Moyenne(1) + "\n");
+           Math.Round(eleve.Moyenne(1),2) + "\n");
             // Afficher la moyenne générale du même élève
-            Console.Write(eleve.prenom + " " + eleve.nom + ", Moyenne Generale : " + eleve.Moyenne() + "\n");
+            Console.Write(eleve.prenom + " " + eleve.nom + ", Moyenne Generale : " + Math.Round(eleve.Moyenne(),2) + "\n");
             // Afficher la moyenne de la classe dans une matière
             Console.Write("Classe de " + sixiemeA.nomClasse + ", Moyenne en " + sixiemeA.matieres[1] + " : " +
-            sixiemeA.Moyenne(1) + "\n");
+            Math.Round(sixiemeA.Moyenne(1),2) + "\n");
             // Afficher la moyenne générale de la classe
-            Console.Write("Classe de " + sixiemeA.nomClasse + ", Moyenne Generale : " + sixiemeA.Moyenne() + "\n");
+            Console.Write("Classe de " + sixiemeA.nomClasse + ", Moyenne Generale : " + Math.Round(sixiemeA.Moyenne(),2) + "\n");
             Console.Read();
         }
 
@@ -91,7 +91,7 @@ namespace TPMoyennes
                 if (eleves[i] is null)
                 {
                     eleves[i] = new Eleve(prenom, nom);
-                    break;
+                    return;
                 }
             }
             //  Console.WriteLine($"{prenom} {nom}");
@@ -103,7 +103,7 @@ namespace TPMoyennes
                 if (matieres[i] is null)
                 {
                     matieres[i] = matiere;
-                    break;
+                    return;
                 }
             }
             //Console.WriteLine(matiere);
@@ -173,7 +173,7 @@ namespace TPMoyennes
                 if (this.notes[i] is null)
                 {
                     this.notes[i] = note;
-                    break;
+                    return;
                 }
             }
         }
